@@ -1,11 +1,11 @@
 :root {
-    --colorPrimario: #f8f9fa;
+    --colorPrimario: #ffffff;
     --colorSecundario: #212529;
-    --colorTerciario: #0d6efd;
+    --colorTerciario: #223450;
     --colorFuente:#ffffff80;
     --colorFuenteSecundario:#212529bf;
     --colorTerciarioHover:#0a58ca;
-    --coloBoton:#198754;
+    --coloBoton:#4a3655;
     --coloBotonHover:#146c43;
 
     --separacion: 5rem; 
@@ -21,22 +21,22 @@ html {
     font-size: 62.5%;
 }
 
+
 /* Asegura que todos los elementos usen el mismo box-sizing */
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
-/* Estilos generales para el cuerpo del documento HTML */
+
+
+/* Cambiar el color de fondo de toda la página */
 body {
-    font-family: var(--fuentePrincipal); 
-    font-size: 1.6rem; 
-    line-height: 1.5;
-    margin: 0; /* Quita los márgenes */
-    padding: 0; /* Quita el relleno */
-    width: 100%; /* Asegura que el cuerpo ocupe todo el ancho */
-    height: 100%; /* Asegura que el cuerpo ocupe todo el alto */
-    overflow-x: hidden; /* Previene desbordamiento horizontal */
+    background-color: #212529; /* Gris */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Ajustar estilo de fuente si es necesario */
 }
+
 
 /* Estilos para contenedores */
 .contenedor {
@@ -162,7 +162,7 @@ h1 {
 }
 
 .btn {
-    padding: 0.7rem;
+    padding: 0.5rem;
     text-decoration: none;
     border-radius: 1rem;
     font-size: 1.8rem;
@@ -182,6 +182,8 @@ h1 {
     background-color: transparent;
     color: white;
     border: 0.2rem solid white;
+    transition: all 0.3s ease
+
 }
 
 .btn-secondary:hover {
@@ -205,6 +207,7 @@ h1 {
 
 /* Estilo para cada tarjeta de proyecto */
 .container_hijo {
+    display: flex;
     background-color: #6d7196;
     padding: 1rem;
     border-radius: 10px;
@@ -218,7 +221,6 @@ h1 {
 .container_hijo:hover {
     transform: scale(1.05); /* Efecto al pasar el mouse */
 }
-
 
 
 /* Imágenes de los proyectos */
@@ -251,36 +253,6 @@ h4 {
     transition: transform 0.3s ease;
     min-height: 300px; /* Garantiza que el contenedor no sea menor que 300px */
     color: #000000bf;
-}
-
-.container_botones {
-    display: flex;
-    justify-content: space-between; /* Alinea los botones con el máximo espacio entre ellos */
-    gap: 1rem; /* Espaciado entre botones */
-    margin-top: auto; /* Lleva los botones hacia la parte inferior */
-    width: 100%; /* Asegura que los botones ocupen todo el ancho disponible */
-}
-
-.boton{
-    display: flex
-}
-
-.bt1 {
-    background-color: #0a58ca;
-    color: rgb(0, 0, 0);
-}
-
-.bt1:hover {
-    background-color: #084298;
-}
-
-.bt2 {
-    background-color: #557da0;
-    color: rgb(0, 0, 0);
-}
-
-.bt2:hover {
-    background-color: #492a57;
 }
 
 
@@ -324,24 +296,51 @@ h4 {
     border-radius: 10px;
 }
 
-.bt1{
-    background-color: #0a58ca;
-    border-radius: 5px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 18px;
-    margin-right: 20px;
-    
+
+
+.boton {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Coloca los botones en extremos opuestos */
+    align-items: center; /* Alinea verticalmente */
+    margin-top: auto;
+    gap: auto; /* Espaciado entre botones en caso de que el contenedor sea pequeño */
 }
 
-.bt2{
-    background-color: rgb(87, 67, 119);
-    border-radius: 5px;
+.bt1, .bt2 {
+    border-radius: 5px; /* Bordes redondeados */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 18px;
-    margin-left: 290px;
-    margin-right: 20px;
-    margin-left: 290px;
+    padding: 0.8rem 1.5rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border: 2px solid transparent; /* Borde inicial */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+
+/* Botón 1 (Azul) */
+.bt1 {
+    background-color: #0a58ca;
+    border-color: #000000; /* Borde azul oscuro */
+}
+
+.bt1:hover {
+    background-color: #084298; /* Azul más oscuro */
+    border-color: #0a58ca; /* Cambia el borde al azul principal */
+}
+
+/* Botón 2 (Morado) */
+.bt2 {
+    background-color: rgb(87, 67, 119);
+    border-color: rgb(0, 0, 0); /* Borde morado oscuro */
+}
+
+.bt2:hover {
+    background-color: rgb(67, 47, 99); /* Morado más oscuro */
+    border-color: rgb(87, 67, 119); /* Cambia el borde al morado principal */
+}
+
 
 .class_proyect{
     color: #ffffff;
@@ -364,60 +363,71 @@ h4{
     margin-left: 20px;
 }
 
-/* Estilos para la sección de pie de página */
-.footer {
-    background-color: #212529; /* Color de fondo suave para el footer */
-    padding: 2rem; /* Espaciado interior */
-    text-align: center; /* Centra el texto */
-    color: #333; /* Color de texto */
+/* Styles for Section Newsletter */
+.newsletter-content{
+    background-color: var(--colorTerciario);
+    border-radius: 0.5rem;
+    color: var(--colorPrimario);
+    padding: 5rem 2rem;
+    margin: 5rem 0;
 }
 
-/* Estilos para el título */
-.class-foot {
-    background-color: #564c8fbf;
-    text-align: center;
-    padding: 10px; /* Espaciado alrededor del texto */
-    margin-bottom: 1rem; /* Espaciado abajo del título */
-    color: rgb(0, 0, 0); /* Color de texto blanco */
-    font-size: 1.5rem; /* Tamaño de fuente */
+@media (width >= 768px) {
+    .newsletter-content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
-/* Estilos para los párrafos */
-.footer p {
-    font-size: 1rem;
-    line-height: 1.6; /* Mejor legibilidad */
-    margin-bottom: 1.5rem; /* Espaciado entre el texto y el formulario */
-    color: #ffffffbf;
+.title{
+    font-size: 3rem;
+    font-weight: 700;
 }
 
-/* Estilos para el formulario */
-footer form {
+.subtitle, .privacy-text {
+    color: var(--colorFuente);
+    font-size: 1.5rem;
+}
+
+.input-group{
+    margin-top: 3rem;
     display: flex;
-    justify-content: center; /* Centra los inputs horizontalmente */
-    gap: 10px; /* Espaciado entre los inputs */
+    margin-bottom: 1rem;
 }
 
-/* Estilos para el input de texto */
-footer input[type="text"] {
-    padding: 0.8rem;
-    width: 300px; /* Ancho del campo de texto */
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+@media (width >= 768px) {
+    .input-group{
+        margin-top: 0;
+    }
 }
 
-/* Estilos para el botón de enviar */
-footer input[type="button"] {
-    padding: 0.8rem 1.5rem;
-    background-color: #4196eb;
-    color: white;
+.form-control {
+    padding-left: 1rem;
+    border-radius: 0.5rem 0 0 0.5rem;
     border: none;
-    border-radius: 5px;
+    flex: 1;
+}
+.form-control:focus{
+    outline: none;
+}
+
+.button-newsletter{
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: none;
+    background-color: var(--coloBoton);
+    color: var(--colorPrimario);
     cursor: pointer;
-    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
-
-/* Estilos cuando el botón está en hover */
-footer input[type="button"]:hover {
-    background-color: #357bbd;
+.button-newsletter:hover{
+    background-color: var(--coloBotonHover);
+}
+/* Styles for Section Footer */
+footer{
+    background-color: var(--colorSecundario);
+    color: var(--colorFuente);
 }
