@@ -1,0 +1,423 @@
+:root {
+    --colorPrimario: #f8f9fa;
+    --colorSecundario: #212529;
+    --colorTerciario: #0d6efd;
+    --colorFuente:#ffffff80;
+    --colorFuenteSecundario:#212529bf;
+    --colorTerciarioHover:#0a58ca;
+    --coloBoton:#198754;
+    --coloBotonHover:#146c43;
+
+    --separacion: 5rem; 
+
+    --fuentePrincipal: "Roboto", sans-serif;
+    --fuenteSecundaria: "Lato", sans-serif; 
+}
+
+/* Estilos generales para el documento HTML */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+/* Asegura que todos los elementos usen el mismo box-sizing */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Estilos generales para el cuerpo del documento HTML */
+body {
+    font-family: var(--fuentePrincipal); 
+    font-size: 1.6rem; 
+    line-height: 1.5;
+    margin: 0; /* Quita los márgenes */
+    padding: 0; /* Quita el relleno */
+    width: 100%; /* Asegura que el cuerpo ocupe todo el ancho */
+    height: 100%; /* Asegura que el cuerpo ocupe todo el alto */
+    overflow-x: hidden; /* Previene desbordamiento horizontal */
+}
+
+/* Estilos para contenedores */
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Estilos generales para encabezados */
+h1, h2, h3 {
+    font-weight: 900;
+    font-family: var(--fuenteSecundaria);
+    color: var(--colorPrimario);
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+.proyectostitulo{
+    color: #000000bf;
+}
+
+.segundotitulo{
+    text-align: center;
+}
+
+/* Estilos generales para imágenes */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Clases de utilidades */
+.text-center {
+    text-align: center;
+}
+
+.foto-circular {
+    border-radius: 70%; /* Hace la imagen circular */
+    width: 350px; /* Tamaño fijo */
+    height: 350px;
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    border: 4px solid var(--colorTerciario); /* Opcional: borde decorativo */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Estilos para la sección Navbar */
+.navbar {
+    background-color: var(--colorSecundario);
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (width >= 768px) {
+    .contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+h1 {
+    margin: calc(var(--separacion) / 2) 0 0 0;
+}
+
+@media (width >= 768px) {
+    h1 {
+        margin: calc(var(--separacion) / 2);
+    }
+}
+
+.nav-links{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--colorFuente);
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover { /* Selector de pseudoclase */
+    color: var(--colorPrimario);
+}
+
+/* Estilos para la sección Hero */
+.hero-section {
+    background-color: var(--colorSecundario);
+}
+
+.hero-text {
+    margin-top: calc(var(--separacion)/2);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    color: var(--colorFuente);
+    word-spacing: 0.2rem;
+}
+
+.hero-buttons {
+    display: flex;  
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: calc(var(--separacion)/2);
+}
+
+.btn {
+    padding: 0.7rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--colorTerciario);
+    color: var(--colorPrimario);
+}
+
+.btn-primary:hover {
+    background-color: var(--colorTerciarioHover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 0.2rem solid white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--colorPrimario);
+    color: var(--colorSecundario);
+}
+
+.hero-image {
+    display: none;
+}
+
+/* Contenedor principal de los proyectos */
+.container_padre {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+    background-color: var(--colorSecundario);
+}
+
+/* Estilo para cada tarjeta de proyecto */
+.container_hijo {
+    background-color: #6d7196;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: auto;
+    width: 30%;
+    min-width: 20rem; /* Ajuste para dispositivos pequeños */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.container_hijo:hover {
+    transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+
+
+/* Imágenes de los proyectos */
+.img-proyect {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    max-height: 300px;
+    max-width: 100%; /* Se ajusta automáticamente al contenedor */
+}
+
+/* Estilos para los encabezados */
+h4 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.container_hijo {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    justify-content: space-between; /* Distribuye los elementos */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    min-width: 20rem; /* Asegura buen ajuste en pantallas pequeñas */
+    background-color: #6d7196;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    min-height: 300px; /* Garantiza que el contenedor no sea menor que 300px */
+    color: #000000bf;
+}
+
+.container_botones {
+    display: flex;
+    justify-content: space-between; /* Alinea los botones con el máximo espacio entre ellos */
+    gap: 1rem; /* Espaciado entre botones */
+    margin-top: auto; /* Lleva los botones hacia la parte inferior */
+    width: 100%; /* Asegura que los botones ocupen todo el ancho disponible */
+}
+
+.boton{
+    display: flex
+}
+
+.bt1 {
+    background-color: #0a58ca;
+    color: rgb(0, 0, 0);
+}
+
+.bt1:hover {
+    background-color: #084298;
+}
+
+.bt2 {
+    background-color: #557da0;
+    color: rgb(0, 0, 0);
+}
+
+.bt2:hover {
+    background-color: #492a57;
+}
+
+
+@media (width >= 768px) {
+    .hero-image {
+        display: block;
+        width: 50rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-content {
+        max-width: 50%;
+    }
+    h2 {
+        font-size: 4.5rem;
+    }
+    .hero-text p {
+        margin: var(--separacion) 0;
+        font-size: 2rem;
+        text-align: left;
+    }
+    .hero-buttons {
+        justify-content: start;
+    }
+    
+}
+
+.container_padre{   
+    background-color: #212529;
+    display: flex;
+    margin: 20px;
+}
+
+.container_hijo{
+    margin: 10px;
+    background-color: #6d7196;
+}
+
+.img-proyect{
+    height: auto;
+    width: auto;
+    border-radius: 10px;
+}
+
+.bt1{
+    background-color: #0a58ca;
+    border-radius: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    margin-right: 20px;
+    
+}
+
+.bt2{
+    background-color: rgb(87, 67, 119);
+    border-radius: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    margin-left: 290px;
+    margin-right: 20px;
+    margin-left: 290px;
+}
+
+.class_proyect{
+    color: #ffffff;
+    background-color: #212529
+}
+
+h3{
+    text-align: center;
+    color: #ffffff;
+    font-size: 40px;
+}
+
+h4{
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+}
+
+.texto1{
+    margin-left: 20px;
+}
+
+/* Estilos para la sección de pie de página */
+.footer {
+    background-color: #212529; /* Color de fondo suave para el footer */
+    padding: 2rem; /* Espaciado interior */
+    text-align: center; /* Centra el texto */
+    color: #333; /* Color de texto */
+}
+
+/* Estilos para el título */
+.class-foot {
+    background-color: #564c8fbf;
+    text-align: center;
+    padding: 10px; /* Espaciado alrededor del texto */
+    margin-bottom: 1rem; /* Espaciado abajo del título */
+    color: rgb(0, 0, 0); /* Color de texto blanco */
+    font-size: 1.5rem; /* Tamaño de fuente */
+}
+
+/* Estilos para los párrafos */
+.footer p {
+    font-size: 1rem;
+    line-height: 1.6; /* Mejor legibilidad */
+    margin-bottom: 1.5rem; /* Espaciado entre el texto y el formulario */
+    color: #ffffffbf;
+}
+
+/* Estilos para el formulario */
+footer form {
+    display: flex;
+    justify-content: center; /* Centra los inputs horizontalmente */
+    gap: 10px; /* Espaciado entre los inputs */
+}
+
+/* Estilos para el input de texto */
+footer input[type="text"] {
+    padding: 0.8rem;
+    width: 300px; /* Ancho del campo de texto */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el botón de enviar */
+footer input[type="button"] {
+    padding: 0.8rem 1.5rem;
+    background-color: #4196eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos cuando el botón está en hover */
+footer input[type="button"]:hover {
+    background-color: #357bbd;
+}
